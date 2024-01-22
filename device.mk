@@ -173,6 +173,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.hwaccel=1
 endif
 
+# Media - VA-API
+ifneq ($(filter %_waydroid_x86 %_waydroid_x86_64,$(TARGET_PRODUCT)),)
+PRODUCT_PACKAGES += \
+    crocus_drv_video \
+    iHD_drv_video \
+    libgallium_dri \
+    vainfo
+endif
+
 # Memtrack
 PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \

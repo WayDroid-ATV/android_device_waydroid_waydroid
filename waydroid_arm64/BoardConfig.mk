@@ -31,3 +31,8 @@ TARGET_2ND_CPU_VARIANT := generic
 
 # Disable scudo
 MALLOC_SVELTE := true
+
+ifneq ($(TARGET_USE_MESA),false)
+BOARD_MESA3D_GALLIUM_DRIVERS += freedreno v3d vc4 etnaviv tegra panfrost lima
+BOARD_MESA3D_VULKAN_DRIVERS += broadcom freedreno panfrost
+endif

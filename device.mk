@@ -71,6 +71,7 @@ ifneq ($(TARGET_USE_MESA),false)
 PRODUCT_PACKAGES += \
     gralloc.minigbm_gbm_mesa \
     gralloc.gbm \
+    dri_gbm \
     libEGL_mesa \
     libGLESv1_CM_mesa \
     libGLESv2_mesa \

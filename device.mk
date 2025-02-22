@@ -55,13 +55,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
-# Camera
-PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.7-external-service
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -116,6 +109,11 @@ endif
 
 # DRM
 $(call inherit-product, frameworks/av/drm/mediadrm/plugins/clearkey/service-lazy.mk)
+
+# Widevine
+ifeq ($(ANDROID_USE_WIDEVINE),true)
+$(call inherit-product-if-exists, vendor/google/proprietary/widevine-prebuilt/widevine.mk)
+endif
 
 # Gatekeeper
 PRODUCT_PACKAGES += \

@@ -63,6 +63,12 @@ PRODUCT_PACKAGES += \
     vendor.waydroid.task@1.0-service \
     hwcomposer.waydroid
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gralloc1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest/gralloc1.xml \
+    $(LOCAL_PATH)/configs/empty_vintf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest.disabled/empty_vintf.xml \
+    $(LOCAL_PATH)/configs/empty_vintf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest/gbm_mesa.allocator@4.0.xml \
+    $(LOCAL_PATH)/configs/empty_vintf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest/gbm_mesa.mapper@4.0.xml \
+
 PRODUCT_PACKAGES += \
     libEGL_angle \
     libGLESv1_CM_angle \
@@ -70,6 +76,10 @@ PRODUCT_PACKAGES += \
     vulkan.pastel
 
 ifneq ($(TARGET_USE_MESA),false)
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@4.0-service.minigbm_gbm_mesa \
+    android.hardware.graphics.mapper@4.0-impl.minigbm_gbm_mesa
+
 PRODUCT_PACKAGES += \
     gralloc.minigbm_gbm_mesa \
     gralloc.gbm \

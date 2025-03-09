@@ -67,3 +67,5 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 # Offending entries:
 # /system/etc/libnfc-nci.conf
 BUILD_BROKEN_DUP_RULES := true
+
+BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true

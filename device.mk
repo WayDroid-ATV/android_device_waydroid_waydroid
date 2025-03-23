@@ -240,6 +240,19 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     vndservicemanager
 
+# Native Bridge
+ifeq ($(ANDROID_USE_NDK_TRANSLATION),true)
+$(call inherit-product-if-exists, vendor/google/proprietary/ndk_translation-prebuilt/libndk_translation.mk)
+$(call inherit-product-if-exists, vendor/google/proprietary/ndk_translation-prebuilt/native_bridge_arm_on_x86.mk)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.nativebridge=1
+endif
+
+ifeq ($(ANDROID_USE_INTEL_HOUDINI),true)
+$(call inherit-product-if-exists, vendor/intel/proprietary/houdini/houdini.mk)
+$(call inherit-product-if-exists, vendor/intel/proprietary/houdini/native_bridge_arm_on_x86.mk)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.nativebridge=1
+endif
+
 ifeq ($(filter %_waydroid_x86 %_waydroid_x86_64 %_waydroid_tv%,$(TARGET_PRODUCT)),)
 PRODUCT_EXTRA_VNDK_VERSIONS := 28 29 30
 endif

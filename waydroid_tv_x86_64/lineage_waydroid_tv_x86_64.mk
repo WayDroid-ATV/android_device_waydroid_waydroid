@@ -26,7 +26,7 @@ $(call inherit-product, $(LOCAL_PATH)/../device.mk)
 $(call inherit-product, vendor/gapps_tv/x86_64/x86_64-vendor.mk)
 
 ANDROID_USE_WIDEVINE := true
-ANDROID_USE_NDK_TRANSLATION := true
+ANDROID_USE_INTEL_HOUDINI := true
 
 PRODUCT_BRAND := waydroid
 PRODUCT_DEVICE := waydroid_tv_x86_64

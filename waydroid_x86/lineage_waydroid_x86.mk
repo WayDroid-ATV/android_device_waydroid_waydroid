@@ -17,6 +17,9 @@
 # Inherit from waydroid device
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)
 
+ANDROID_USE_WIDEVINE := true
+ANDROID_USE_INTEL_HOUDINI := true
+
 PRODUCT_BRAND := waydroid
 PRODUCT_DEVICE := waydroid_x86
 PRODUCT_MANUFACTURER := Waydroid

@@ -1,6 +1,3 @@
-# Waydroid props
-import /vendor/waydroid.prop
-
 # Media UBWC
 import /vendor_extra/build.prop vendor.gralloc.disable_ubwc
 

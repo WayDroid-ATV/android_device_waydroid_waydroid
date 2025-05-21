@@ -110,10 +110,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # DRM
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.3-service.clearkey
+$(call inherit-product, frameworks/av/drm/mediadrm/plugins/clearkey/service-lazy.mk)
 
 # Gatekeeper
 PRODUCT_PACKAGES += \

@@ -1,0 +1,2 @@
+on early-init
+   exec -- /vendor/bin/sh -c "[ -c /dev/host_hwbinder ] && setprop ctl.stop vendor.gralloc-2-0"

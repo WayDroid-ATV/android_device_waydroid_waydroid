@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+TARGET_SUPPORTS_OMX_SERVICE := true
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 

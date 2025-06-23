@@ -92,18 +92,14 @@ PRODUCT_PACKAGES += \
     libgbm_mesa_wrapper
 
 PRODUCT_PACKAGES += \
+    vulkan.intel \
+    vulkan.intel_hasvk \
     vulkan.radeon \
     vulkan.freedreno \
     vulkan.broadcom \
     vulkan.panfrost \
     vulkan.virtio \
     vulkan.lvp
-
-ifneq ($(filter %_waydroid_x86 %_waydroid_x86_64,$(TARGET_PRODUCT)),)
-PRODUCT_PACKAGES += \
-    vulkan.intel \
-    vulkan.intel_hasvk
-endif
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml

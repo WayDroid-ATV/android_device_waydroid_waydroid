@@ -22,6 +22,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 # Inherit from waydroid device
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)
 
+# Inherit GApps
+$(call inherit-product, vendor/gapps_tv/x86_64/x86_64-vendor.mk)
+
+ANDROID_USE_WIDEVINE := true
+ANDROID_USE_NDK_TRANSLATION := true
+
 PRODUCT_BRAND := waydroid
 PRODUCT_DEVICE := waydroid_tv_x86_64
 PRODUCT_MANUFACTURER := Waydroid

@@ -162,17 +162,22 @@ endif
 # Media - VA-API
 ifneq ($(filter %_waydroid_x86 %_waydroid_x86_64 %_waydroid_tv_x86 %_waydroid_tv_x86_64,$(TARGET_PRODUCT)),)
 PRODUCT_PACKAGES += \
-    android.hardware.media.c2@1.2-ffmpeg-service \
     crocus_drv_video \
     iHD_drv_video \
-    libgallium_dri \
+    libgallium_dri
+
+PRODUCT_PROPERTY_OVERRIDES += media.sf.hwaccel=1
+endif
+
+# Media - FFMPEG
+PRODUCT_PACKAGES += \
+    android.hardware.media.c2@1.2-ffmpeg-service \
     vainfo
 
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.ffmpeg-codec2.rank=0 \
-    debug.stagefright.ccodec=4 \
-    media.sf.hwaccel=1
-endif
+    debug.ffmpeg-codec2.hwaccel.drm=0 \
+    persist.ffmpeg-codec2.pixel_format=RGBX_8888
 
 # Memtrack
 PRODUCT_PACKAGES += \

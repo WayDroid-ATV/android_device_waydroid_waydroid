@@ -15,6 +15,7 @@
 #
 
 PRODUCT_IS_ATV := true
+TARGET_ATV_FORCE_1080_SCALING := false
 TARGET_SUPPORTS_OMX_SERVICE := true
 
 # Inherit from those products. Most specific first.

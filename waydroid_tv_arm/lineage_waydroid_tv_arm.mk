@@ -15,6 +15,7 @@
 #
 
 PRODUCT_IS_ATV := true
+TARGET_ATV_FORCE_1080_SCALING := false
 
 # Inherit from waydroid device
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)

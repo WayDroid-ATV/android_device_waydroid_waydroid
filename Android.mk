@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter waydroid_arm64 waydroid_arm64_only waydroid_arm waydroid_x86 waydroid_x86_64,$(TARGET_DEVICE)),)
+ifneq ($(filter waydroid_%,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 ifneq ($(filter waydroid_arm64 waydroid_arm64_only waydroid_arm,$(TARGET_DEVICE)),)

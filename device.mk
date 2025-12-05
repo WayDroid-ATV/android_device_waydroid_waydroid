@@ -280,3 +280,7 @@ endif
 # Updater
 PRODUCT_PACKAGES += \
     WaydroidUpdater
+
+# DocumentsUI
+PRODUCT_PACKAGES += \
+    DocumentsUI

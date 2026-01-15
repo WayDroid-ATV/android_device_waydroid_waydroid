@@ -129,7 +129,8 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-service.waydroid
+    android.hardware.health-service.example \
+    android.hardware.health-service.example_recovery
 
 # Init
 PRODUCT_COPY_FILES += \

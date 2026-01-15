@@ -31,14 +31,17 @@ endif
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
+# Disable compressed APEX
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
+
 # Enable automatic partition size
 PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 
 # Audio HAL
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-service \
-    android.hardware.audio@4.0-impl \
-    android.hardware.audio.effect@4.0-impl \
+    android.hardware.audio.service \
+    android.hardware.audio@7.1-impl \
+    android.hardware.audio.effect@7.0-impl \
     audio.primary.waydroid \
     audio.r_submix.default \
     audio.usb.default \
@@ -55,6 +58,10 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
+# Bluetooth HAL
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.1-service.sim
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -64,10 +71,6 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     vendor.waydroid.task@1.0-service \
     hwcomposer.waydroid
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gralloc1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest/gralloc1.xml \
-    $(LOCAL_PATH)/configs/empty_vintf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest.disabled/empty_vintf.xml
 
 PRODUCT_PACKAGES += \
     libEGL_angle \
@@ -138,7 +141,16 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0-service
+    android.hardware.keymaster@4.1-service
+
+# Keymint HAL
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint-service
+
+# Non-secure implementation of AuthGraph/Secretkeeper HAL for compliance.
+PRODUCT_PACKAGES += \
+    com.android.hardware.security.authgraph \
+    com.android.hardware.security.secretkeeper
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -184,7 +196,7 @@ PRODUCT_PACKAGES += \
 
 # Media - FFMPEG
 PRODUCT_PACKAGES += \
-    android.hardware.media.c2@1.2-ffmpeg-service \
+    android.hardware.media.c2-ffmpeg-service \
     vainfo
 
 PRODUCT_PROPERTY_OVERRIDES += media.sf.hwaccel=1
@@ -235,6 +247,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level.xml \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version.xml \
     frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute.xml \
+    frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:system/etc/permissions/android.software.freeform_window_management.xml
 
 # Power
@@ -275,7 +288,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.nativebridge=1
 endif
 
 ifeq ($(filter %_waydroid_x86 %_waydroid_x86_64 %_waydroid_tv%,$(TARGET_PRODUCT)),)
-PRODUCT_EXTRA_VNDK_VERSIONS := 28 29 30
+PRODUCT_EXTRA_VNDK_VERSIONS := 29 30
 endif
 
 # Updater

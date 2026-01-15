@@ -17,6 +17,9 @@
 # Inherit from waydroid device
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)
 
+# Inherit GApps
+$(call inherit-product, vendor/gapps/arm/arm-vendor.mk)
+
 PRODUCT_BRAND := waydroid
 PRODUCT_DEVICE := waydroid_arm
 PRODUCT_MANUFACTURER := Waydroid

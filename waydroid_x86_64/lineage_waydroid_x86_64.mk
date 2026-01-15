@@ -20,6 +20,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 # Inherit from waydroid device
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)
 
+# Inherit GApps
+$(call inherit-product, vendor/gapps/x86_64/x86_64-vendor.mk)
+
 ANDROID_USE_WIDEVINE := true
 ANDROID_USE_INTEL_HOUDINI := true
 

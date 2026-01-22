@@ -62,6 +62,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1-service.sim
 
+# Camera
+USE_CAMERA_V4L2_HAL := true
+
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.7-external-service \
+    camera.v4l2
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -82,14 +92,22 @@ ifneq ($(TARGET_USE_MESA),false)
 
 ifneq ($(filter %_waydroid_x86 %_waydroid_x86_64 %_waydroid_tv_x86 %_waydroid_tv_x86_64,$(TARGET_PRODUCT)),)
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@4.0-service.minigbm_intel \
-    android.hardware.graphics.mapper@4.0-impl.minigbm_intel \
-    gralloc.minigbm_intel
+    android.hardware.graphics.allocator@4.0-service.minigbm_celadon \
+    android.hardware.graphics.mapper@4.0-impl.minigbm_celadon \
+    gralloc.minigbm_celadon
+else
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@4.0-service.minigbm_dmabuf \
+    android.hardware.graphics.mapper@4.0-impl.minigbm_dmabuf \
+    gralloc.minigbm_dmabuf
 endif
 
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@4.0-service.minigbm \
     android.hardware.graphics.allocator@4.0-service.minigbm_gbm_mesa \
+    android.hardware.graphics.mapper@4.0-impl.minigbm \
     android.hardware.graphics.mapper@4.0-impl.minigbm_gbm_mesa \
+    gralloc.minigbm \
     gralloc.minigbm_gbm_mesa
 
 PRODUCT_PACKAGES += \
@@ -190,7 +208,7 @@ endif
 ifneq ($(filter %_waydroid_x86 %_waydroid_x86_64 %_waydroid_tv_x86 %_waydroid_tv_x86_64,$(TARGET_PRODUCT)),)
 # Media - VA-API
 PRODUCT_PACKAGES += \
-    crocus_drv_video \
+    i965_drv_video \
     iHD_drv_video \
     libgallium_dri
 
@@ -199,13 +217,12 @@ PRODUCT_PACKAGES += \
     android.hardware.media.c2-ffmpeg-service \
     vainfo
 
-PRODUCT_PROPERTY_OVERRIDES += media.sf.hwaccel=1
-endif
-
 PRODUCT_PROPERTY_OVERRIDES += \
+    media.sf.hwaccel=1 \
     debug.ffmpeg-codec2.rank=0 \
     debug.ffmpeg-codec2.hwaccel.drm=0 \
     persist.ffmpeg-codec2.pixel_format=RGBX_8888
+endif
 
 # Memtrack
 PRODUCT_PACKAGES += \

@@ -7,3 +7,7 @@ on post-fs-data
    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
    enable wpa_supplicant
+
+on property:waydroid.virtwifi.enabled=true && property:sys.boot_completed=1
+   exec -- /system/bin/cmd wifi set-wifi-enabled enabled
+   exec -- /system/bin/cmd wifi connect-network "Virtual Wi-Fi" open

@@ -210,12 +210,19 @@ ifneq ($(filter %_waydroid_x86 %_waydroid_x86_64 %_waydroid_tv_x86 %_waydroid_tv
 PRODUCT_PACKAGES += \
     i965_drv_video \
     iHD_drv_video \
-    libgallium_dri
+    libgallium_dri \
+    vainfo
 
 # Media - FFMPEG
 PRODUCT_PACKAGES += \
-    android.hardware.media.c2-ffmpeg-service \
-    vainfo
+    android.hardware.media.c2-ffmpeg-service
+
+# Media - MediaSDK
+PRODUCT_PACKAGES += \
+    android.hardware.media.c2-service.intel \
+    libmfx_c2_components_hw \
+    libvpl \
+    libmfx-gen
 
 PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.hwaccel=1 \

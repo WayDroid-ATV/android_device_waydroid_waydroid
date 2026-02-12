@@ -205,6 +205,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/mediaextractor.32bit.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 endif
 
+# Media - FFMPEG
+PRODUCT_PACKAGES += \
+    android.hardware.media.c2-ffmpeg-service
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.ffmpeg-codec2.rank=0 \
+    debug.ffmpeg-codec2.hwaccel.drm=0 \
+    debug.ffmpeg-codec2.pixel_format=RGBX_8888
+
 ifneq ($(filter %_waydroid_x86 %_waydroid_x86_64 %_waydroid_tv_x86 %_waydroid_tv_x86_64,$(TARGET_PRODUCT)),)
 # Media - VA-API
 PRODUCT_PACKAGES += \
@@ -212,10 +221,6 @@ PRODUCT_PACKAGES += \
     iHD_drv_video \
     libgallium_dri \
     vainfo
-
-# Media - FFMPEG
-PRODUCT_PACKAGES += \
-    android.hardware.media.c2-ffmpeg-service
 
 # Media - MediaSDK
 PRODUCT_PACKAGES += \
@@ -225,10 +230,7 @@ PRODUCT_PACKAGES += \
     libmfx-gen
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    media.sf.hwaccel=1 \
-    debug.ffmpeg-codec2.rank=0 \
-    debug.ffmpeg-codec2.hwaccel.drm=0 \
-    persist.ffmpeg-codec2.pixel_format=RGBX_8888
+    media.sf.hwaccel=1
 endif
 
 # Memtrack

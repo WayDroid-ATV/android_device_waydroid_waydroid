@@ -39,7 +39,7 @@ ifneq ($(TARGET_USE_MESA),false)
 BOARD_MESA3D_USES_MESON_BUILD := true
 BOARD_MESA3D_MESON_ARGS := -Dallow-kcmp=enabled -Dmesa-clc=system -Dprecomp-compiler=system
 BOARD_MESA3D_BUILD_LIBGBM := true
-BOARD_MESA3D_GALLIUM_DRIVERS := r300 r600 nouveau llvmpipe svga virgl radeonsi zink
+BOARD_MESA3D_GALLIUM_DRIVERS := r600 nouveau llvmpipe svga virgl radeonsi zink
 BOARD_MESA3D_VULKAN_DRIVERS := swrast virtio amd
 endif
 

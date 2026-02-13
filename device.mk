@@ -124,6 +124,7 @@ PRODUCT_PACKAGES += \
     vulkan.intel \
     vulkan.intel_hasvk \
     vulkan.radeon \
+    vulkan.nouveau \
     vulkan.freedreno \
     vulkan.broadcom \
     vulkan.panfrost \

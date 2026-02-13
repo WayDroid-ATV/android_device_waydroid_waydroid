@@ -40,7 +40,7 @@ TARGET_CPU_ABI_LIST := \
 
 ifneq ($(TARGET_USE_MESA),false)
 BOARD_MESA3D_GALLIUM_DRIVERS += i915 iris crocus
-BOARD_MESA3D_VULKAN_DRIVERS += intel intel_hasvk
+BOARD_MESA3D_VULKAN_DRIVERS += intel intel_hasvk nouveau
 BOARD_MESA3D_GALLIUM_VA := enabled
 BOARD_MESA3D_VIDEO_CODECS := all
 endif

@@ -238,8 +238,8 @@ PRODUCT_PACKAGES += \
     memtrack.waydroid
 
 # NFC
-PRODUCT_PACKAGES += \
-    NfcNci
+# PRODUCT_PACKAGES += \
+#     NfcNci
 
 # WiFi
 PRODUCT_PACKAGES += \

@@ -333,3 +333,9 @@ PRODUCT_PACKAGES += \
 # DocumentsUI
 PRODUCT_PACKAGES += \
     DocumentsUI
+
+ifeq ($(PRODUCT_IS_ATV),true)
+# Keyboard layout
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/Generic_ATV.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Generic_ATV.kl
+endif

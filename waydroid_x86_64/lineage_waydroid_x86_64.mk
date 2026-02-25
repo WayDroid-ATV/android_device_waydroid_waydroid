@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)
 
 ANDROID_USE_WIDEVINE := true
-ANDROID_USE_INTEL_HOUDINI := true
+ANDROID_USE_NDK_TRANSLATION := true
 
 PRODUCT_BRAND := waydroid
 PRODUCT_DEVICE := waydroid_x86_64

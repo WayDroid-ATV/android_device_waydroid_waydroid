@@ -295,7 +295,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.waydroid
+    android.hardware.power-service.example
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \

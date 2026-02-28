@@ -289,7 +289,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.waydroid
+    android.hardware.power-service.example
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
@@ -298,10 +298,6 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service.waydroid
-
-# Vibrator
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-service.waydroid
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \

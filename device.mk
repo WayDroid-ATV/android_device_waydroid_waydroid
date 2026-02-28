@@ -76,7 +76,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     vendor.waydroid.task@1.0-service \
@@ -90,12 +89,7 @@ PRODUCT_PACKAGES += \
 
 ifneq ($(TARGET_USE_MESA),false)
 
-ifneq ($(filter %_waydroid_x86 %_waydroid_x86_64 %_waydroid_tv_x86 %_waydroid_tv_x86_64,$(TARGET_PRODUCT)),)
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@4.0-service.minigbm_celadon \
-    android.hardware.graphics.mapper@4.0-impl.minigbm_celadon \
-    gralloc.minigbm_celadon
-else
+ifeq ($(filter %_waydroid_x86 %_waydroid_x86_64 %_waydroid_tv_x86 %_waydroid_tv_x86_64,$(TARGET_PRODUCT)),)
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@4.0-service.minigbm_dmabuf \
     android.hardware.graphics.mapper@4.0-impl.minigbm_dmabuf \
@@ -117,19 +111,22 @@ PRODUCT_PACKAGES += \
     libGLESv1_CM_mesa \
     libGLESv2_mesa \
     libgallium_dri \
-    libglapi \
-    libgbm_mesa_wrapper
+    libgbm_mesa_wrapper \
+    vulkan.lvp
 
+ifneq ($(filter %_x86 %_x86_64,$(TARGET_PRODUCT)),)
 PRODUCT_PACKAGES += \
     vulkan.intel \
     vulkan.intel_hasvk \
     vulkan.radeon \
-    vulkan.nouveau \
+    vulkan.nouveau
+else
+PRODUCT_PACKAGES += \
     vulkan.freedreno \
     vulkan.broadcom \
     vulkan.panfrost \
-    vulkan.virtio \
-    vulkan.lvp
+    vulkan.virtio
+endif
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml

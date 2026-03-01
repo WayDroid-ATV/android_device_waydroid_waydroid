@@ -38,6 +38,9 @@ TARGET_CPU_ABI_LIST := \
     $(TARGET_CPU_ABI) $(TARGET_2ND_CPU_ABI) \
     $(NATIVE_BRIDGE_ABI_LIST_64_BIT) $(NATIVE_BRIDGE_ABI_LIST_32_BIT)
 
+# Fingerprint spoof for GApps
+BUILD_FINGERPRINT := google/tangorpro/tangorpro:16/BP4A.260205.001/14624666:user/release-keys
+
 ifneq ($(TARGET_USE_MESA),false)
 BOARD_MESA3D_GALLIUM_DRIVERS += i915 iris crocus
 BOARD_MESA3D_VULKAN_DRIVERS += intel intel_hasvk nouveau

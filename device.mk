@@ -196,6 +196,7 @@ endif
 
 ifneq ($(TARGET_USE_MESA),false)
 PRODUCT_COPY_FILES += \
+    external/mesa/src/util/00-mesa-defaults.conf:$(TARGET_COPY_OUT_VENDOR)/etc/drirc \
     $(LOCAL_PATH)/configs/mediacodec.mesa.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     $(LOCAL_PATH)/configs/mediacodec.mesa.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaswcodec.policy
 endif

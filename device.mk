@@ -235,10 +235,6 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     memtrack.waydroid
 
-# NFC
-# PRODUCT_PACKAGES += \
-#     NfcNci
-
 # WiFi
 PRODUCT_PACKAGES += \
     libwpa_client \

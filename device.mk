@@ -243,10 +243,6 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     memtrack.waydroid
 
-# NFC
-# PRODUCT_PACKAGES += \
-#     NfcNci
-
 # WiFi
 PRODUCT_PACKAGES += \
     libwpa_client \
@@ -340,6 +336,10 @@ PRODUCT_PACKAGES += \
 # DocumentsUI
 PRODUCT_PACKAGES += \
     DocumentsUI
+
+# Material 3 Expressive
+PRODUCT_PROPERTY_OVERRIDES += \
+    is_expressive_design_enabled=1
 
 ifeq ($(PRODUCT_IS_ATV),true)
 # Keyboard layout

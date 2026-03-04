@@ -347,4 +347,10 @@ ifeq ($(PRODUCT_IS_ATV),true)
 # Keyboard layout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/Generic_ATV.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Generic_ATV.kl
+
+# Fingerprint spoof for GApps
+BUILD_FINGERPRINT := google/sabrina_prod_stable/sabrina:12/STTE.240615.007/12033466:user/release-keys
+else
+# Fingerprint spoof for GApps
+BUILD_FINGERPRINT := google/tangorpro/tangorpro:14/AP2A.240905.003/12231197:user/release-keys
 endif

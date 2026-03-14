@@ -25,4 +25,7 @@
     <!-- The device supports freeform window management -->
     <bool name="config_freeformWindowManagement">true</bool>
 
+    <!-- Do not restrict the UI resolution on the WM side; use the native resolution of the device's
+         screen -->
+    <integer name="config_maxUiWidth">0</integer>
 </resources>

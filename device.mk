@@ -107,7 +107,6 @@ PRODUCT_PACKAGES += \
     gralloc.minigbm_gbm_mesa
 
 PRODUCT_PACKAGES += \
-    gralloc.gbm \
     dri_gbm \
     libEGL_mesa \
     libGLESv1_CM_mesa \

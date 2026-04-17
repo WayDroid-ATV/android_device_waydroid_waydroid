@@ -327,6 +327,12 @@ PRODUCT_PACKAGES += \
     DocumentsUI
 
 ifeq ($(PRODUCT_IS_ATV),true)
+# Dex preopt
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    TvSettings \
+    TvSystemUI \
+    Catapult
+
 # Keyboard layout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/Generic_ATV.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Generic.kl
@@ -334,6 +340,13 @@ PRODUCT_COPY_FILES += \
 # Fingerprint spoof for GApps
 BUILD_FINGERPRINT := google/sabrina_prod_stable/sabrina:12/STTE.240615.007/12033466:user/release-keys
 else
+# Dex preopt
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Settings \
+    SystemUI \
+    Trebuchet \
+    TrebuchetQuickStep
+
 # Fingerprint spoof for GApps
 BUILD_FINGERPRINT := google/tangorpro/tangorpro:16/BP2A.250805.005/13691446:user/release-keys
 endif

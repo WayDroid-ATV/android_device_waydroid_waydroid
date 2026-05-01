@@ -113,7 +113,8 @@ PRODUCT_PACKAGES += \
     libGLESv2_mesa \
     libgallium_dri \
     libgbm_mesa_wrapper \
-    vulkan.lvp
+    vulkan.lvp \
+    vulkan.virtio
 
 ifneq ($(filter %_x86 %_x86_64,$(TARGET_PRODUCT)),)
 PRODUCT_PACKAGES += \
@@ -125,8 +126,7 @@ else
 PRODUCT_PACKAGES += \
     vulkan.freedreno \
     vulkan.broadcom \
-    vulkan.panfrost \
-    vulkan.virtio
+    vulkan.panfrost
 endif
 
 PRODUCT_COPY_FILES += \

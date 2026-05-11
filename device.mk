@@ -85,6 +85,11 @@ PRODUCT_PACKAGES += \
     hwcomposer.drm_minigbm \
     hwcomposer.waydroid
 
+ifeq ($(ANDROID_BUILD_REDROID_HWC),true)
+PRODUCT_PACKAGES += \
+    hwcomposer.redroid
+endif
+
 PRODUCT_PACKAGES += \
     libEGL_angle \
     libGLESv1_CM_angle \

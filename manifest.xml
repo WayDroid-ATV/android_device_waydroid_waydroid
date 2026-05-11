@@ -138,40 +138,4 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<instance>default</instance>
 		</interface>
 	</hal>
-    <hal format="hidl">
-        <name>vendor.waydroid.display</name>
-        <transport>hwbinder</transport>
-        <version>1.2</version>
-        <interface>
-            <name>IWaydroidDisplay</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.waydroid.task</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IWaydroidTask</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.waydroid.window</name>
-        <transport>hwbinder</transport>
-        <version>1.2</version>
-        <interface>
-            <name>IWaydroidWindow</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.waydroid.clipboard</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IWaydroidClipboard</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
 </manifest>

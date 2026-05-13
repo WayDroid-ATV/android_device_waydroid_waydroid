@@ -160,6 +160,10 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.example_recovery
 
 # Init
+PRODUCT_PACKAGES += \
+    waydroid-init \
+    waydroid-preinit
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/init.waydroid.vendor.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.waydroid.vendor.rc
 

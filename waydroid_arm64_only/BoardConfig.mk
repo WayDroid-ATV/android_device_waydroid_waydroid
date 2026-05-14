@@ -32,8 +32,8 @@ TARGET_2ND_CPU_VARIANT :=
 AUDIOSERVER_MULTILIB := first
 
 ifneq ($(TARGET_USE_MESA),false)
-BOARD_MESA3D_GALLIUM_DRIVERS += freedreno v3d vc4 etnaviv tegra panfrost lima
-BOARD_MESA3D_VULKAN_DRIVERS += broadcom freedreno panfrost
+BOARD_MESA3D_GALLIUM_DRIVERS += asahi freedreno v3d vc4 etnaviv tegra panfrost lima
+BOARD_MESA3D_VULKAN_DRIVERS += asahi broadcom freedreno panfrost
 BOARD_MESA3D_GALLIUM_VA := disabled
 BOARD_MESA3D_VIDEO_CODECS := all
 endif

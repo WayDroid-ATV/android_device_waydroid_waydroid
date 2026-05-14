@@ -23,7 +23,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)
 
 # Inherit GApps
+ifeq ($(ANDROID_BUILD_GAPPS),true)
 $(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+endif
 
 PRODUCT_BRAND := waydroid
 PRODUCT_DEVICE := waydroid_arm64_only

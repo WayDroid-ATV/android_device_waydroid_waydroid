@@ -22,7 +22,9 @@ TARGET_SUPPORTS_OMX_SERVICE := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 
 # Inherit GApps
+ifeq ($(ANDROID_BUILD_GAPPS),true)
 $(call inherit-product, vendor/gapps_tv/arm64/arm64-vendor.mk)
+endif
 
 # Inherit from waydroid device
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)

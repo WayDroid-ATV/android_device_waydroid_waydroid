@@ -18,7 +18,9 @@
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)
 
 # Inherit GApps
+ifeq ($(ANDROID_BUILD_GAPPS),true)
 $(call inherit-product, vendor/gapps/arm/arm-vendor.mk)
+endif
 
 PRODUCT_BRAND := waydroid
 PRODUCT_DEVICE := waydroid_arm

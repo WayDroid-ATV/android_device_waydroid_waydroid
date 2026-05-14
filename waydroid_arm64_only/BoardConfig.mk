@@ -29,9 +29,6 @@ TARGET_2ND_CPU_ABI :=
 TARGET_2ND_CPU_ABI2 :=
 TARGET_2ND_CPU_VARIANT :=
 
-# Disable scudo
-MALLOC_SVELTE := true
-
 AUDIOSERVER_MULTILIB := first
 
 ifneq ($(TARGET_USE_MESA),false)

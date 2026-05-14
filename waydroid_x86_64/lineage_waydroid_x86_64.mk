@@ -21,7 +21,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)
 
 # Inherit GApps
+ifeq ($(ANDROID_BUILD_GAPPS),true)
 $(call inherit-product, vendor/gapps/x86_64/x86_64-vendor.mk)
+endif
 
 ANDROID_USE_WIDEVINE := true
 ANDROID_USE_NDK_TRANSLATION := true

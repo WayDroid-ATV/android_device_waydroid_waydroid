@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-TARGET_SUPPORTS_OMX_SERVICE := true
+ANDROID_USE_GAPPS ?= true
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
@@ -23,7 +23,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)
 
 # Inherit GApps
-ifeq ($(ANDROID_BUILD_GAPPS),true)
+ifeq ($(ANDROID_USE_GAPPS),true)
 $(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
 endif
 

@@ -17,11 +17,13 @@
 PRODUCT_IS_ATV := true
 TARGET_ATV_FORCE_1080_SCALING := false
 
+ANDROID_USE_GAPPS ?= true
+
 # Inherit from waydroid device
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)
 
 # Inherit GApps
-ifeq ($(ANDROID_BUILD_GAPPS),true)
+ifeq ($(ANDROID_USE_GAPPS),true)
 $(call inherit-product, vendor/gapps_tv/arm/arm-vendor.mk)
 endif
 

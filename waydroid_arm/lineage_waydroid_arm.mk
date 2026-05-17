@@ -14,11 +14,13 @@
 # limitations under the License.
 #
 
+ANDROID_USE_GAPPS ?= true
+
 # Inherit from waydroid device
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)
 
 # Inherit GApps
-ifeq ($(ANDROID_BUILD_GAPPS),true)
+ifeq ($(ANDROID_USE_GAPPS),true)
 $(call inherit-product, vendor/gapps/arm/arm-vendor.mk)
 endif
 

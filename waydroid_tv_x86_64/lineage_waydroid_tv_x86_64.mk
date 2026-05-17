@@ -17,6 +17,10 @@
 PRODUCT_IS_ATV := true
 TARGET_ATV_FORCE_1080_SCALING := false
 
+ANDROID_USE_GAPPS ?= true
+ANDROID_USE_NDK_TRANSLATION ?= true
+ANDROID_USE_WIDEVINE ?= true
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
@@ -24,12 +28,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(LOCAL_PATH)/../device.mk)
 
 # Inherit GApps
-ifeq ($(ANDROID_BUILD_GAPPS),true)
+ifeq ($(ANDROID_USE_GAPPS),true)
 $(call inherit-product, vendor/gapps_tv/x86_64/x86_64-vendor.mk)
 endif
-
-ANDROID_USE_WIDEVINE := true
-ANDROID_USE_NDK_TRANSLATION := true
 
 PRODUCT_BRAND := waydroid
 PRODUCT_DEVICE := waydroid_tv_x86_64

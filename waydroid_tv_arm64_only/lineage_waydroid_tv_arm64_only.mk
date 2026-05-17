@@ -16,13 +16,14 @@
 
 PRODUCT_IS_ATV := true
 TARGET_ATV_FORCE_1080_SCALING := false
-TARGET_SUPPORTS_OMX_SERVICE := true
+
+ANDROID_USE_GAPPS ?= true
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 
 # Inherit GApps
-ifeq ($(ANDROID_BUILD_GAPPS),true)
+ifeq ($(ANDROID_USE_GAPPS),true)
 $(call inherit-product, vendor/gapps_tv/arm64/arm64-vendor.mk)
 endif
 

@@ -1,19 +1,10 @@
-<compatibility-matrix version="1.0" type="framework" level="3">
+<compatibility-matrix version="1.0" type="framework" level="7">
     <hal format="hidl" optional="true">
         <name>android.hardware.configstore</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
         <interface>
             <name>ISurfaceFlingerConfigs</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.light</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ILight</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -32,41 +23,6 @@
         <interface>
             <name>IComponentStore</name>
             <instance>ffmpeg</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.media.c2</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IComponentStore</name>
-            <instance>intel</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.media.c2</name>
-        <version>1</version>
-        <interface>
-            <name>IComponentStore</name>
-            <instance>intel</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.memtrack</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IMemtrack</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.power</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IPower</name>
-            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">

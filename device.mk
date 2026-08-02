@@ -150,14 +150,11 @@ endif
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service \
-    gatekeeper.waydroid
+    com.android.hardware.gatekeeper.nonsecure
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health-service.example \
-    android.hardware.health-service.example_recovery
+    android.hardware.health-service.example
 
 # Init
 PRODUCT_PACKAGES += \
@@ -166,10 +163,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/init.waydroid.vendor.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.waydroid.vendor.rc
-
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1-service
 
 # Keymint HAL
 PRODUCT_PACKAGES += \
@@ -182,7 +175,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.waydroid
+    android.hardware.lights-service.example
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -234,9 +227,7 @@ endif
 
 # Memtrack
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-    memtrack.waydroid
+    com.android.hardware.memtrack
 
 # WiFi
 PRODUCT_PACKAGES += \
@@ -298,7 +289,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-service.waydroid
+    com.android.hardware.sensors
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \

@@ -342,5 +342,5 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     TrebuchetQuickStep
 
 # Fingerprint spoof for GApps
-BUILD_FINGERPRINT := google/tangorpro/tangorpro:16/BP4A.260205.001/14624666:user/release-keys
+BUILD_FINGERPRINT := google/tangorpro/tangorpro:17/CP2A.260705.006/15641320:user/release-keys
 endif

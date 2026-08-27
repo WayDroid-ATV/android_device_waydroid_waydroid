@@ -4,6 +4,10 @@ import /vendor_extra/build.prop vendor.gralloc.disable_ubwc
 # Audio
 af.thread.throttle=false
 audio.deep_buffer.media=true
+ro.config.vc_call_vol_default=16
+ro.config.media_vol_default=16
+ro.config.alarm_vol_default=16
+ro.config.system_vol_default=16
 
 # Codec2
 debug.stagefright.c2inputsurface=-1

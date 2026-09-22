@@ -45,28 +45,17 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 34
 PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 
 # Audio HAL
-PRODUCT_PACKAGES += \
-    android.hardware.audio.service \
-    android.hardware.audio@7.1-impl \
-    android.hardware.audio.effect@7.0-impl \
-    audio.primary.waydroid \
-    audio.r_submix.default \
-    audio.usb.default \
-    libasound_module_pcm_pulse \
-    libasound_module_ctl_pulse \
-    libasound_module_conf_pulse
+PRODUCT_PACKAGES += com.android.hardware.audio
+
+$(call inherit-product, frameworks/av/services/audiopolicy/audio_policy_config_vendor_1.mk)
+$(call inherit-product, hardware/interfaces/audio/aidl/default/audio_effects.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest_waydroid.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest/manifest_waydroid.xml \
     $(LOCAL_PATH)/configs/empty_vintf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest.disabled/empty_vintf.xml \
     $(LOCAL_PATH)/configs/empty_vintf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest/manifest_host.xml \
-    hardware/waydroid/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    frameworks/av/media/libeffects/data/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
-    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
+    $(LOCAL_PATH)/configs/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/configs/primary_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/primary_audio_policy_configuration.xml
 
 # Bluetooth HAL
 PRODUCT_PACKAGES += \

@@ -76,3 +76,4 @@ BUILD_BROKEN_DUP_RULES := true
 
 BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_PLUGIN_VALIDATION := soong-llvm18 soong-llvm21 soong-llvm22
+BUILD_BROKEN_SRC_DIR_RW_ALLOWLIST += $(abspath prebuilts/mesa-tools)

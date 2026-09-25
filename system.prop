@@ -43,3 +43,6 @@ ro.lmk.use_new_strategy=true
 
 # Material 3 Expressive
 is_expressive_design_enabled=true
+
+# HWC
+persist.waydroid.unfocused_doze_ms=0

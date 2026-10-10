@@ -35,9 +35,6 @@ TARGET_NATIVE_BRIDGE_ARCH := arm64
 TARGET_NATIVE_BRIDGE_ARCH_VARIANT := armv8-a
 TARGET_NATIVE_BRIDGE_CPU_VARIANT := generic
 
-# Fingerprint spoof for GApps
-BUILD_FINGERPRINT := google/tangorpro/tangorpro:16/BP4A.260205.001/14624666:user/release-keys
-
 ifneq ($(TARGET_USE_MESA),false)
 # Trimmed to the desktop hosts we test on (Intel gen9+), plus a software
 # fallback. virgl/virtio are for the virtio-gpu render node in the PDK VM.
